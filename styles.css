@@ -3,7 +3,12 @@ html, body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
-
+h2{
+  font-family: "Bungee", sans-serif;
+}
+a{
+    text-decoration: none;
+}
 .bungee-regular {
   font-family: "Bungee", sans-serif;
   font-weight: 400;
@@ -47,40 +52,46 @@ html, body {
     color:#67c8be;
 }
 
-/* MAIN CONTENT */
+/* MAIN */
 main {
   grid-area: main;
   padding-left: 220px; 
   display: grid;
-  gap: 50px;
+  gap: 30px; 
   padding-top: 20px;
 }
 
-/* HOME SECTION */
+/* HOME */
 .home {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
 }
 
-
-.home-text {
-font-family: "Bungee", sans-serif;
+/* GREETING */
+#greeting {
+  font-family: "Bungee", sans-serif;
+}
+/* ABOUT ME */
+.about-text {
+  font-family: Arial, sans-serif; 
+  margin-top: 30px; 
+  max-width: 300px; 
+  padding: 20px;
+  border: 2px solid #67c8be;
+  border-radius: 5px;
 }
 
 .accent{
     color:#67c8be;
 }
 
-
+/* MY PICTURE  */
 .my-picture img {
   max-width: 100%;
   height: auto;
 }
-/* ABOUT */
-.about {
-  max-width: 800px;
-}
+
 
 /* PROJECTS */
 .projects {
@@ -95,7 +106,7 @@ font-family: "Bungee", sans-serif;
   text-align: center;
 }
 
-/* CONTACT */
+/* CONTACT FORM */
 .contact form {
   display: flex;
   flex-direction: column;
@@ -132,16 +143,17 @@ font-family: "Bungee", sans-serif;
   margin-top: 10px;
   border-radius: 8px; 
 }
-/* GitHub and LinkedIn logos  */
+/* GITHUB AND LINKEDIN  */
 .svg-icon {
   width: 30px; 
   height: 30px; 
   color: #000;
   transition: color 0.3s, transform 0.3s; 
+
 }
 
 .svg-icon:hover {
-  color: #67c8be;
+  color: white;
   transform: scale(1.1);
 }
 /* FOOTER */
@@ -149,6 +161,8 @@ footer {
   grid-area: footer;
   padding-left: 220px;
   padding: 20px;
+  background-color: #67c8be;
+  margin-top:20px;
 }
 
 .footer-grid {
@@ -159,4 +173,66 @@ footer {
 
 .name {
   text-align: right;
+}
+
+
+@media (max-width: 600px) {
+
+  .container {
+    grid-template-areas:
+      "logo"
+      "menu"
+      "main"
+      "footer";
+  }
+
+  /* LOGO */
+  .logo {
+    text-align: center;
+    padding: 15px;
+  }
+
+  /* MENU */
+  .menu {
+    position: static;            
+    width: 100%;
+    flex-direction: row;         
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #67c8be;
+    border-bottom: 1px solid #67c8be;
+    background: white;
+  }
+
+  main,
+  footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* HOME  */
+  .home {
+    display: block;
+  }
+
+  .my-picture {
+    display: none;
+  }
+
+  /* PROJECTS */
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  /* FOOTER */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .name {
+    text-align: center;
+  }
 }
